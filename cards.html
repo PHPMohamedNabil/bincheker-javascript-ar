@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>كارت بنك</title>
+  <link href='https://fonts.googleapis.com/css?family=Cairo' rel='stylesheet'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+</head>
+<style type="text/css">
+  *{
+    direction: rtl;
+    font-family: 'Cairo';
+    text-align: right;
+  }
+
+  .text-center-important{
+     text-align: center !important;
+     direction: initial !important;
+  }
+
+  p{
+    font-size: 18px;
+  }
+
+</style>
+<body style="background:url('cover2.jpg');"><!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark shadow-5-strong">
+  <!-- Container wrapper -->
+  <div class="container-fluid">
+    <!-- Navbar brand -->
+    <a class="navbar-brand" href="index.html"  style="font-size:35px;">كارت <span class="text-info">بنك</span></a>
+
+    <!-- Toggle button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- Left links -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page"  href="index.html" >الرئيسية</a>
+        </li>
+        <!-- Navbar dropdown -->
+        <li class="nav-item ">
+          <a
+            class="nav-link text-white bg-info"
+            href=""
+            id="navbarDropdown"
+            role="button"
+            data-mdb-toggle="dropdown"
+            aria-expanded="false"
+            style="border-radius: 4px;"
+          >
+             ماهو رقم الBIN
+          </a>
+        </li>
+        <li class="nav-item ">
+          <a
+            class="nav-link text-white"
+            href="cards.html"
+            id="navbarDropdown"
+            role="button"
+            data-mdb-toggle="dropdown"
+            aria-expanded="false"
+          >
+             أرقام بطاقة بغرض الفحص والتجربه
+          </a>
+        </li>
+      </ul>
+      <!-- Left links -->
+    </div>
+    <!-- Collapsible wrapper -->
+  </div>
+  <!-- Container wrapper -->
+</nav>
+<!-- Navbar -->
+      <div class="container mt-5">
+        <div class="row d-flex justify-content-center">
+  
+        </div>
+           <div class="row">
+              <div class="col-md-12 mb-4">
+
+                <div class="card">
+                  <div class="card-body px-4">
+                     <div class="row">
+                       <div class="col-md-12 text-center-important" >
+                <h1 class=" mb-4">إنشاء ارقام بطاقة بنك ارقام وهميه بغرض الفحص والتجربه</h1>
+                <hr style="border-bottom:1px solid #17a2b8;width:60%;text-align:right;float: right;" />
+                        </div>
+                      <div class="col-md-12">
+                        <p>
+إنشاء ارقام وهميه بغرض التجربه والفحص تستخدم هذه الأرقام من قبل المطورين و الذين يعملون فى مجال التكنولوجيا والمجالات المختلفه لإنشاء ارقام بطاقة بنكيه تتبع نفس الخوارزمية الخاصه ببطاقات البنوك خوارزمية لوهن  Luhn algorithm ( ارقام بنكيه بتسلسل صحيح ولاكن هى فالأساس لا تعبر عن اى كارت بنك مصدر أو نشيط حيث أنها غير صالحه لاى نوع من الأستخدام ولا يتم قبولها).
+
+                        </p>
+                      </div>
+                     </div>
+                   <div class="row justify-content-center">
+                       <div class="col-md-8">
+                         <form id="generateCard">
+                            <div class="form-group">
+                              <label>
+                            أول ستة أرقام :
+                            </label>
+                            <input class="form-control" id="bin" type="number" placeholder="any range" />
+                            </div>
+                            <div class="form-group">
+                              <input type="submit" value="توليد أرقام" class="btn btn-success" />
+                            </div>
+                            <div class="form-group">
+                              <input id="displayCard" class="form-control col-5" type="text" placeholder="card number will appear here" disabled />
+                            </div>
+                          </form>
+                       </div>
+                   </div>
+                </div> 
+       
+              </div>
+            </div>
+          </div>
+</div>
+ <footer class="bg-light text-center text-lg-start fixed-bottom">
+  <!-- Grid container -->
+  <div class="container p-2">
+   
+
+  <!-- Copyright -->
+  <div class="text-center" style="direction:ltr;">
+  Copyright  © 2023  Designed and Developed by <a href="index.html">Mohamed Nabil</a>
+    <a href="https://www.linkedin.com/in/mohamed-nabil-php/">
+      <img src="linkedin.png" width="35" height="35" />
+    </a>
+    <a href="https://github.com/PHPMohamedNabil">
+      <img src="github.png" width="35" height="35"  />
+    </a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.payment/3.0.0/jquery.payment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+  function generateValidCard(bin, length) {
+  var cardNumber = generate(bin, length),
+    luhnValid  = luhnChk(cardNumber),
+    limit      = 20,
+    counter    = 0;
+
+  while (!luhnValid) {
+    cardNumber = generate(bin, length);
+    luhnValid  = luhnChk(cardNumber);
+    counter++;
+    
+    if (counter === limit) {
+      cardNumber = (luhnValid) ? cardNumber : 'لا يمكن إنشاء بطاقة صالحة باستخدام المعلمات المحددة'
+      break;
+    }
+  }
+  
+  return cardNumber;
+}
+
+function generate(bin, length) {
+    var cardNumber = bin,
+        randomNumberLength = length - (bin.length + 1);
+
+    for (var i = 0; i < randomNumberLength; i++) {
+        var digit = Math.floor((Math.random() * 9) + 0);
+        cardNumber += digit;
+    }
+
+  var checkDigit = getCheckDigit(cardNumber);
+
+  cardNumber += String(checkDigit);
+  
+    return cardNumber;
+}
+
+function getCheckDigit(number) {
+    var sum = 0,
+        module,
+        checkDigit;
+
+    for (var i = 0; i < number.length; i++) {
+
+        var digit = parseInt(number.substring(i, (i + 1)));
+
+        if ((i % 2) == 0) {
+            digit = digit * 2;
+            if (digit > 9) {
+                digit = (digit / 10) + (digit % 10);
+            }
+        }
+        sum += digit;
+    }
+
+    module     = parseInt(sum) % 10;
+    checkDigit = ((module === 0) ? 0 : 10 - module);
+    
+    return checkDigit;
+}
+
+/**
+ * Luhn algorithm in JavaScript: validate credit card number supplied as string of numbers
+ * @author ShirtlessKirk. Copyright (c) 2012.
+ * @license WTFPL (http://www.wtfpl.net/txt/copying)
+ */
+var luhnChk = (function (arr) {
+    return function (ccNum) {
+        var 
+            len = ccNum.length,
+            bit = 1,
+            sum = 0,
+            val;
+
+        while (len) {
+            val = parseInt(ccNum.charAt(--len), 10);
+            sum += (bit ^= 1) ? arr[val] : val;
+        }
+
+        return sum && sum % 10 === 0;
+    };
+}([0, 2, 4, 6, 8, 1, 3, 5, 7, 9]));
+
+// Visual stuff
+$('#generateCard').submit(function(e){
+  var bin = $('#bin').val(),
+    cardNumber = generateValidCard(bin,16);
+  
+  $('#displayCard').val(cardNumber);
+  
+  e.preventDefault();
+})
+</script>
+</body>
+</html>

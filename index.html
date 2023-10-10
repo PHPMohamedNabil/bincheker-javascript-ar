@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>كارت بنك</title>
+  <link href='https://fonts.googleapis.com/css?family=Cairo' rel='stylesheet'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+</head>
+<style type="text/css">
+  *{
+    direction: rtl;
+    font-family: 'Cairo';
+    text-align: right;
+  }
+  html, body {
+  height: 100%;
+}
+
+  .text-center-important{
+     text-align: center !important;
+     direction: initial !important;
+  }
+
+</style>
+<body style="background:url('cover2.jpg');"><!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark shadow-5-strong">
+  <!-- Container wrapper -->
+  <div class="container-fluid">
+    <!-- Navbar brand -->
+    <a class="navbar-brand" href="index.html"  style="font-size:35px;">كارت <span class="text-info">بنك</span></a>
+
+    <!-- Toggle button -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>القائمة
+    </button>
+
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- Left links -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="index.html" >الرئيسية</a>
+        </li>
+        <!-- Navbar dropdown -->
+        <li class="nav-item ">
+          <a
+            class="nav-link text-white bg-info"
+            href="bin.html"
+            id="navbarDropdown"
+            role="button"
+            data-mdb-toggle="dropdown"
+            aria-expanded="false"
+            style="border-radius: 4px;"
+          >
+             ماهو رقم الBIN
+          </a>
+        </li>
+             <li class="nav-item ">
+          <a
+            class="nav-link text-white"
+            href="bin.html"
+            id="navbarDropdown"
+            role="button"
+            data-mdb-toggle="dropdown"
+            aria-expanded="false"
+          >
+             أرقام بطاقة بغرض الفحص والتجربه
+          </a>
+        </li>
+      </ul>
+      <!-- Left links -->
+    </div>
+    <!-- Collapsible wrapper -->
+  </div>
+  <!-- Container wrapper -->
+</nav>
+<!-- Navbar -->
+      <div class="container mt-5">
+        <div class="row d-flex justify-content-center">
+          <h1 class="text-white mb-4">   خدمة التحقق من رقم المعرف البنكى</h1>
+          <p class="text-white text-center-important">الأطلاع على معلومات وتفاصيل البنك المصدر لأى بطاقة البنكيه من خلال أول 6 أرقام على وجه الكارت بشكل سريع ومبسط
+          </p>
+        </div>
+           <div class="row">
+              <div class="col-md-12 mb-4">
+
+                <div class="card">
+                  <div class="card-body px-4">
+
+                    <form action="" id="BinForm">
+                      <div class="row no-gutters">
+                         <div class="col-md-10">
+                            <!-- Bin Number -->
+                      <div class="form-group md-form md-outline mt-0">
+                           <label for="name">أول 6 أرقام من الكارت (BIN Number) :</label>
+                        <input style="direction: ltr !important;" id="BinNumber" type="tel"  min="6" max="16" id="name" class="cc-number form-control" placeholder="يرجى كتابة أول 6 أرقام من الكارت: مثال 5267489,417854...">
+                      </div>
+                         </div>
+                         <div class="col-md-2 pr-2" style="margin-top:30.8px;">
+                           <button type="submit" class="btn btn-primary btn-md btn-block ml-0 mb-0">التحقق من البطاقة</button>
+                        </div>
+                      
+                      </div>
+                    </form>
+                     <div class="row">
+                       <div class="col-md-12 text-center-important" style="display:none;" id="load">
+                          <p class="" style="text-align: center;"> جارى عرض النتيجه   ..</p>
+                          <br>
+                          <img src="loader2.gif" class="rounded mx-auto" alt="..."  width="135" height="135" style="margin-top:-38px;" />
+                        </div>
+                        <div class="col-md-12" id="results">
+                          
+                        </div>
+                    
+                       </div>
+                   </div>
+                </div>
+                  </div>
+              
+
+              </div>
+          
+            </div> 
+       
+      </div>
+ <footer class="bg-light text-center text-lg-start fixed-bottom">
+  <!-- Grid container -->
+  <div class="container p-2">
+   
+
+  <!-- Copyright -->
+  <div class="text-center" style="direction:ltr;">
+  Copyright  © 2023  Designed and Developed by <a href="index.html">Mohamed Nabil</a>
+    <a href="https://www.linkedin.com/in/mohamed-nabil-php/">
+      <img src="linkedin.png" width="35" height="35" />
+    </a>
+    <a href="https://github.com/PHPMohamedNabil">
+      <img src="github.png" width="35" height="35"  />
+    </a>
+  </div>
+  <!-- Copyright -->
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.payment/3.0.0/jquery.payment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
